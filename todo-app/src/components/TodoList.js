@@ -22,10 +22,10 @@ class TodoList extends Component {
 			<div className="list">
 				{this.state.items && this.state.items.length > 0 ? (
 					this.state.items.map((item) => (
-						<>
+						<div key={item.id}>
 							<TodoItem itemData={item} />
 							<br />
-						</>
+						</div>
 					))
 				) : (
 					<h1>No items</h1>
