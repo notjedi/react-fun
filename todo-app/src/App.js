@@ -13,6 +13,7 @@ function App() {
 			<br />
 			<TodoList />
 			<Popup popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
+			<br />
 			<Button title="Add Task" onClick={() => setPopupOpen(!popupOpen)} />
 		</div>
 	);

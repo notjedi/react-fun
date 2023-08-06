@@ -1,11 +1,8 @@
 .flex-container {
-    display: flex;
+  display: inline-flex;
+  width: 100%;
 }
 
 .flex-child {
-    flex: 1;
+  align-self: center;
 }
-
-.flex-child:first-child {
-    margin-right: 20px;
-} 

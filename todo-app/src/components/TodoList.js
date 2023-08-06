@@ -21,9 +21,14 @@ class TodoList extends Component {
 		return (
 			<div className="list">
 				{this.state.items && this.state.items.length > 0 ? (
-					this.state.items.map((item) => <TodoItem itemData={item} />)
+					this.state.items.map((item) => (
+						<>
+							<TodoItem itemData={item} />
+							<br />
+						</>
+					))
 				) : (
-					<h1> No items </h1>
+					<h1>No items</h1>
 				)}
 			</div>
 		);
