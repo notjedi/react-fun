@@ -9,8 +9,10 @@ function App() {
 
 	return (
 		<div className="App">
+			<br />
+			<br />
 			<TodoList />
-			<Popup popupOpen={popupOpen} />
+			<Popup popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
 			<Button title="Add Task" onClick={() => setPopupOpen(!popupOpen)} />
 		</div>
 	);

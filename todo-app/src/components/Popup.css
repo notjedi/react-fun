@@ -7,7 +7,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  display: none;
+  display: block;
 }
 
 .popup-content {
@@ -15,13 +15,17 @@
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888888;
-  width: 30%;
+  width: 40%;
   font-weight: bolder;
 }
+
 .popup-content button {
   display: block;
   margin: 0 auto;
 }
-.show {
-  display: block;
+
+.buttons {
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
 }
