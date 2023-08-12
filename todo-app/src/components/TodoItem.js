@@ -4,7 +4,7 @@ import "./TodoItem.css";
 function TodoItem(props) {
 	const item = props.itemData;
 	const { onClickDelete } = props;
-	const [checked, setChecked] = useState(false);
+	const [checked, setChecked] = useState(item.status === "completed");
 	const handleCheckbox = () => {
 		setChecked(!checked);
 	};
@@ -14,9 +14,26 @@ function TodoItem(props) {
 			<div className="flex-child" style={{ width: "10%" }}>
 				<input type="checkbox" onChange={handleCheckbox} checked={checked} />
 			</div>
-			<div className="flex-child" style={{ width: "40%", textAlign: "start" }}>
-				<h3> {item.title} </h3>
-			</div>
+
+			{checked ? (
+				<div
+					className="flex-child"
+					style={{ width: "40%", textAlign: "start" }}
+				>
+					<s>
+						{" "}
+						<h3> {item.title} </h3>{" "}
+					</s>
+				</div>
+			) : (
+				<div
+					className="flex-child"
+					style={{ width: "40%", textAlign: "start" }}
+				>
+					<h3> {item.title} </h3>
+				</div>
+			)}
+
 			<div className="flex-child" style={{ width: "30%", textAlign: "start" }}>
 				<h3> {item.status} </h3>
 			</div>
