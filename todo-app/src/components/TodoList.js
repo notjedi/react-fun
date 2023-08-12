@@ -6,7 +6,7 @@ class TodoList extends Component {
 		items: [
 			{
 				id: 0,
-				title: "Go shit",
+				title: "Test",
 				status: "completed",
 			},
 			{
@@ -17,13 +17,21 @@ class TodoList extends Component {
 		],
 	};
 
+	removeTodo = (id) => {
+		this.setState({
+			items: this.state.items.filter((object) => object.id !== id),
+		});
+	};
+
 	render() {
+		const { items } = this.state;
+
 		return (
 			<div className="list">
-				{this.state.items && this.state.items.length > 0 ? (
-					this.state.items.map((item) => (
+				{items && items.length > 0 ? (
+					items.map((item) => (
 						<div key={item.id}>
-							<TodoItem itemData={item} />
+							<TodoItem itemData={item} onClickDelete={this.removeTodo} />
 							<br />
 						</div>
 					))

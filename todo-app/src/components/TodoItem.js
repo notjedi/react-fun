@@ -3,14 +3,11 @@ import "./TodoItem.css";
 
 function TodoItem(props) {
 	const item = props.itemData;
+	const { onClickDelete } = props;
 	const [checked, setChecked] = useState(false);
 	const handleCheckbox = () => {
-		console.log("hi from checkbox", item.title);
 		setChecked(!checked);
 	};
-	function handleDelete() {
-		console.log("hi from delete", item.title);
-	}
 
 	return (
 		<div className="flex-container">
@@ -24,7 +21,7 @@ function TodoItem(props) {
 				<h3> {item.status} </h3>
 			</div>
 			<div className="flex-child" style={{ width: "20%" }}>
-				<button type="button" onClick={handleDelete}>
+				<button type="button" onClick={() => onClickDelete(item.id)}>
 					Delete
 				</button>
 			</div>
