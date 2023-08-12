@@ -8,12 +8,14 @@ function Popup(props) {
 		{ id: "0", value: "incomplete", label: "Incomplete" },
 		{ id: "1", value: "completed", label: "Completed" },
 	];
-	const initialState = {
-		id: 0,
-		title: "",
-		status: "",
+	const getInitiaState = () => {
+		return {
+			id: Math.floor(Math.random() * 1000 + 1),
+			title: "",
+			status: "incomplete",
+		};
 	};
-	const [state, setState] = useState(initialState);
+	const [state, setState] = useState(getInitiaState());
 
 	return (
 		popupOpen && (
@@ -68,6 +70,7 @@ function Popup(props) {
 							onClick={() => {
 								onClickAdd(state);
 								setPopupOpen(false);
+								setState(getInitiaState());
 							}}
 						>
 							Add
